@@ -1,0 +1,25 @@
+<nav class="navbar navbar-default" >
+  <div class="container-fluid">
+    <div class="navbar-header">
+
+      <a class="navbar-brand" href="{% url 'index' %}" >Home</a>
+      <ul class="nav navbar-nav">
+        <li><a href="{% url 'listings' %}" style="color:white">Skills List</a></li>
+        <li><a name="create-listing" href="{% url 'createListing' %}" style="color:white">Plus</a></li>
+      </ul>
+    </div>
+    <div class="navbar-right">
+      <ul class="nav navbar-nav">
+        <li>
+          <form action="/search/" method="post">
+            {% csrf_token %}
+            {{searchForm.search_terms}}
+            <!--<button type="submit" class="btn btn-secondary">Search</span></button>-->
+          </form>
+        </li>
+        <li><a name="logout" href="{% url 'logout' %}" style="color:white">Logout</a></li>
+      </ul>
+    </div>
+  </div>
+
+</nav>

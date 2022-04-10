@@ -1,0 +1,19 @@
+[
+{"model": "marketplace.userprofile", "pk": 10, "fields": {"username": "user", "email": "test1@test.com", "password": "pbkdf2_sha256$30000$PsuHvdVrFE3x$SwH/k/HtE3/IITKqgK31imSwTLBpac6wvHifRVAdHw0="}},
+{"model": "marketplace.userprofile", "pk": 11, "fields": {"username": "user2", "email": "test2@test.com", "password": "pbkdf2_sha256$30000$UVL0I9vNvCfO$XBdLER5knTPSLkOVyT8zoEJsFyAbzMwetU8+ibmJX94="}},
+{"model": "marketplace.skill", "pk": 1, "fields": {"title": "Django", "description": "description"}}, {"model": "marketplace.skill", "pk": 2, "fields": {"title": "Mario Strikers", "description": "soccer"}},
+{"model": "marketplace.skill", "pk": 8, "fields": {"title": "NewSkill1", "description": "test skill 1"}},
+{"model": "marketplace.skill", "pk": 9, "fields": {"title": "NewSkill2", "description": "this is a test skill"}},
+{"model": "marketplace.skill", "pk": 10, "fields": {"title": "Cooking", "description": "make food"}}, {"model": "marketplace.skill", "pk": 11, "fields": {"title": "Dating", "description": "how to meet people"}},
+{"model": "marketplace.skill", "pk": 12, "fields": {"title": "education", "description": "how to be smart"}},
+{"model": "marketplace.tag", "pk": 1, "fields": {"tagType": "Tech", "skill": 1}},
+{"model": "marketplace.transaction", "pk": 2, "fields": {"buyer": 10, "seller": 11, "skillSold": 1, "price": 12.0, "timestamp": "2018-03-27T02:07:17.971Z"}},
+{"model": "marketplace.transaction", "pk": 3, "fields": {"buyer": 11, "seller": 10, "skillSold": 9, "price": 0.0, "timestamp": "2018-03-27T02:07:37.372Z"}},
+{"model": "marketplace.listing", "pk": 8, "fields": {"skill": 8, "price": 10.1, "listDate": "2018-03-27T02:01:32.914Z", "description": "this is the first listing", "header": "Listing1", "user": 10}},
+{"model": "marketplace.listing", "pk": 9, "fields": {"skill": 9, "price": 11.11, "listDate": "2018-03-27T02:02:56.910Z", "description": "this is the second listing", "header": "Listing2", "user": 11}},
+{"model": "marketplace.listing", "pk": 10, "fields": {"skill": 10, "price": 123.12, "listDate": "2018-03-27T02:03:35.284Z", "description": "Basics of cooking", "header": "Cooking101", "user": 11}},
+{"model": "marketplace.listing", "pk": 11, "fields": {"skill": 11, "price": 0.0, "listDate": "2018-03-27T02:04:12.915Z", "description": "Learn how to love for the first time", "header": "Learn to Love", "user": 10}},
+{"model": "marketplace.listing", "pk": 12, "fields": {"skill": 12, "price": 12.13, "listDate": "2018-03-27T02:05:41.837Z", "description": "learn how to get an A by someone who knows Django pretty well", "header": "How to get an A in CS4501: ISA", "user": 10}},
+{"model": "marketplace.review", "pk": 1, "fields": {"header": "This product is okay", "text":"Yep, the title says it all", "rating":3, "user":10, "listing":8}}
+
+]

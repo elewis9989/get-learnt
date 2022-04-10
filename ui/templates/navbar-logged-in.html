@@ -1,0 +1,27 @@
+<nav class="navbar navbar-default" style="background: rgba(238, 238, 238, 0.0); border:0;">
+  <div class="container-fluid">
+    <div class="navbar-header">
+
+      <a class="navbar-brand" href="{% url 'index' %}" style="color:white">Home</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="{% url 'listings' %}" style="color:white">Skills List</a></li>
+      <li><a name="create-listing" href="{% url 'createListing' %}" style="color:white">Plus</a></li>
+
+    </ul>
+    <div class="navbar-right">
+      <ul class="nav navbar-nav">
+        <!-- need to have a way to dynamically decide whether to include log in or log out -->
+        <li>
+          <form action="/search/" method="post">
+            {% csrf_token %}
+            {{searchForm.search_terms}}
+            <!--<button type="submit" class="btn btn-secondary">Search</span></button>-->
+          </form>
+        </li>
+        <li><a name="logout" href="{% url 'logout' %}" style="color:white">Logout</a></li>
+      </ul>
+    </div>
+  </div>
+  </div>
+</nav>

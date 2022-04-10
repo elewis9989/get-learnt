@@ -1,0 +1,72 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head;
+        any other head content must come *after* these tags -->
+
+  <title>Get Learnt</title>
+  <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+  {% include 'navbar-solid.html' %} {% block body %}
+    <div class="col-md-4 col-md-offset-2 d-inline-block">
+      <div class="thumbnail">
+        <h1>{{listing.listing.skill.title}}<h1>
+        <h3>{{listing.listing.header}}</h3>
+        <h4><b>Description:</b> {{listing.listing.skill.description}}</4h>
+        <h4><b>Price:</b> {{listing.listing.price}}</h4>
+          <br></br>
+      </div>
+      <a href="#" class="btn btn-primary center-block">Buy</a>
+      <br></br>
+    </div>
+    <div class="col-md-4 com-md-offset-7 thumbnail">
+      <h3>Reviews</h3>
+      {% for review in reviews.result.reviews %}
+        <div class="thumbnail">
+          <h4><b>{{review.header}} <b><h4>
+          <p>{{review.text}}</p>
+          <p>{{review.rating}}</p>
+        </div>
+      {% endfor %}
+      <div>
+        <p> Write a Review </p>
+        <form action='/create-review/{{user}}/{{listing.listing.id}}/' method=post>
+          {% csrf_token %}
+          <label for="{{form.title.id_for_label}}">Title:</label>
+          {{form.header}}
+          <br></br>
+          <label for="{{form.text.id_for_label}}">Text:</label>
+          {{form.text}}
+          <br></br>
+          <label for="{{form.rating.id_for_label}}">Rating:</label>
+          {{form.rating}}
+          <br></br>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+    <div class="col-md-4 col-md-offset-2 d-inline-block">
+      <h4>Users interested in this skill also liked:</h4>
+      {% for rec in recs %}
+        <div class="thumbnail">
+          <h4>{{rec.listing.header}}</h4>
+          <p>{{rec.listing.description}}</p>
+        </div>
+      {%endfor%}
+    </div>
+
+  {% endblock %}
+
+</body>
+
+</html>
